@@ -68,31 +68,6 @@
     
     [[APIManager shared] logout];
 }
-//
-//- (void)beginRefresh:(UIRefreshControl *)refreshControl {
-//
-//        // Create NSURL and NSURLRequest
-//
-//        NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
-//                                                              delegate:nil
-//                                                         delegateQueue:[NSOperationQueue mainQueue]];
-//        session.configuration.requestCachePolicy = NSURLRequestReloadIgnoringLocalCacheData;
-//    
-//        NSURLSessionDataTask *task = [session dataTaskWithRequest:request
-//                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-//    
-//           // ... Use the new data to update the data source ...
-//
-//           // Reload the tableView now that there is new data
-//            [self.tableView reloadData];
-//
-//           // Tell the refreshControl to stop spinning
-//            [refreshControl endRefreshing];
-//
-//        }];
-//    
-//        [task resume];
-//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.arrayOfTweets.count;
@@ -104,10 +79,12 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     Tweet *tweet = self.arrayOfTweets[indexPath.row];
+    User *user = tweet.user;
     
     cell.tweet = tweet;
     
-    cell.tweetName.text = tweet.idStr;
+    cell.tweetName.text = user.name;
+    cell.tweetUsername.text = user.screenName;
     cell.tweetText.text = tweet.text;
     cell.likeCount.text = [NSString stringWithFormat:@"%i", tweet.favoriteCount];
     cell.retweetCount.text = [NSString stringWithFormat:@"%i", tweet.retweetCount];

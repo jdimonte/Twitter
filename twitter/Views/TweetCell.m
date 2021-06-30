@@ -55,12 +55,14 @@
            [btn setImage:[UIImage imageNamed:@"favor-icon.png"] forState:UIControlStateNormal];
            // other statements
             self.likeCount.text = [NSString stringWithFormat:@"%i", self.tweet.favoriteCount];
+            self.likeCount.textColor =[UIColor grayColor];
         }
      else
        {
            [btn setImage:[UIImage imageNamed:@"favor-icon-red.png"] forState:UIControlStateNormal];
            // other statements
            self.likeCount.text = [NSString stringWithFormat:@"%i", self.tweet.favoriteCount];
+           self.likeCount.textColor =[UIColor redColor];
        }
     [self refreshData];
 }
@@ -97,12 +99,14 @@
            [btn setImage:[UIImage imageNamed:@"retweet-icon.png"] forState:UIControlStateNormal];
            // other statements
             self.retweetCount.text = [NSString stringWithFormat:@"%i", self.tweet.retweetCount];
+            self.likeCount.textColor =[UIColor grayColor];
         }
      else
        {
            [btn setImage:[UIImage imageNamed:@"retweet-icon-green.png"] forState:UIControlStateNormal];
            // other statements
            self.retweetCount.text = [NSString stringWithFormat:@"%i", self.tweet.retweetCount];
+           self.likeCount.textColor =[UIColor greenColor];
        }
     [self refreshData];
 }
