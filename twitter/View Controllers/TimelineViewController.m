@@ -116,6 +116,26 @@
     cell.tweetProfile.layer.cornerRadius =  cell.tweetProfile.frame.size.width / 2;
     cell.tweetProfile.clipsToBounds = true;
     
+    //update UI
+    UIButton *btnRetweet = (UIButton *)cell.retweetIcon;
+    UIButton *btnLike = (UIButton *)cell.likeIcon;
+    if(cell.tweet.retweeted == YES){
+        cell.retweetCount.textColor = [UIColor greenColor];
+        [btnRetweet setImage:[UIImage imageNamed:@"retweet-icon-green.png"] forState:UIControlStateNormal];
+    }
+    else{
+        cell.retweetCount.textColor = [UIColor grayColor];
+        [btnRetweet setImage:[UIImage imageNamed:@"retweet-icon.png"] forState:UIControlStateNormal];
+    }
+    if(cell.tweet.favorited == YES){
+        cell.likeCount.textColor = [UIColor redColor];
+        [btnLike setImage:[UIImage imageNamed:@"favor-icon-red.png"] forState:UIControlStateNormal];
+    }
+    else{
+        cell.likeCount.textColor = [UIColor grayColor];
+        [btnLike setImage:[UIImage imageNamed:@"favor-icon.png"] forState:UIControlStateNormal];
+    }
+    
     NSString *URLString = tweet.user.profilePicture;
     NSURL *url = [NSURL URLWithString:URLString];
     NSData *urlData = [NSData dataWithContentsOfURL:url];

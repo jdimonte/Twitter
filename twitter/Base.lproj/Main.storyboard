@@ -219,8 +219,10 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="likeCount" destination="l89-NY-eHe" id="D4f-r7-2mE"/>
+                                            <outlet property="likeIcon" destination="bde-xq-iSm" id="Rlu-uG-3na"/>
                                             <outlet property="replyCount" destination="Dsn-Rg-bNa" id="xOk-XG-LOB"/>
                                             <outlet property="retweetCount" destination="n0C-5s-XpW" id="IZW-Vo-JoQ"/>
+                                            <outlet property="retweetIcon" destination="AUw-HE-Vjh" id="H1N-GO-0gn"/>
                                             <outlet property="tweetDate" destination="KGv-sz-7Uk" id="sG5-aI-TKo"/>
                                             <outlet property="tweetName" destination="Pp1-fi-cmn" id="nq5-eZ-96m"/>
                                             <outlet property="tweetProfile" destination="xs2-Xk-geH" id="dqt-zP-oU5"/>

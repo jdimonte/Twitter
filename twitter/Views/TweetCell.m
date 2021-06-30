@@ -48,23 +48,25 @@
             }
         }];
     }
+    UIButton *btn = (UIButton *)sender;
+
+     if( [[btn imageForState:UIControlStateNormal] isEqual:[UIImage imageNamed:@"favor-icon-red.png"]])
+        {
+           [btn setImage:[UIImage imageNamed:@"favor-icon.png"] forState:UIControlStateNormal];
+           // other statements
+            self.likeCount.text = [NSString stringWithFormat:@"%i", self.tweet.favoriteCount];
+        }
+     else
+       {
+           [btn setImage:[UIImage imageNamed:@"favor-icon-red.png"] forState:UIControlStateNormal];
+           // other statements
+           self.likeCount.text = [NSString stringWithFormat:@"%i", self.tweet.favoriteCount];
+       }
     [self refreshData];
 }
 - (IBAction)didTapRetweet:(id)sender {
     if(self.tweet.retweeted == YES){
         //retweet
-        self.tweet.retweeted = YES;
-        self.tweet.retweetCount += 1;
-        [[APIManager shared] retweet:self.tweet completion:^(Tweet *tweet, NSError *error) {
-            if(error){
-                 NSLog(@"Error retweeting tweet: %@", error.localizedDescription);
-            }
-            else{
-                NSLog(@"Successfully retweeting the following Tweet: %@", tweet.text);
-            }
-        }];
-    } else {
-        //unretweet
         self.tweet.retweeted = NO;
         self.tweet.retweetCount -= 1;
         [[APIManager shared] retweet:self.tweet completion:^(Tweet *tweet, NSError *error) {
@@ -75,7 +77,34 @@
                 NSLog(@"Successfully unretweeting the following Tweet: %@", tweet.text);
             }
         }];
+    } else {
+        //unretweet
+        self.tweet.retweeted = YES;
+        self.tweet.retweetCount += 1;
+        [[APIManager shared] retweet:self.tweet completion:^(Tweet *tweet, NSError *error) {
+            if(error){
+                 NSLog(@"Error retweeting tweet: %@", error.localizedDescription);
+            }
+            else{
+                NSLog(@"Successfully retweeting the following Tweet: %@", tweet.text);
+            }
+        }];
     }
+    UIButton *btn = (UIButton *)sender;
+
+     if( [[btn imageForState:UIControlStateNormal] isEqual:[UIImage imageNamed:@"retweet-icon-green.png"]])
+        {
+           [btn setImage:[UIImage imageNamed:@"retweet-icon.png"] forState:UIControlStateNormal];
+           // other statements
+            self.retweetCount.text = [NSString stringWithFormat:@"%i", self.tweet.retweetCount];
+        }
+     else
+       {
+           [btn setImage:[UIImage imageNamed:@"retweet-icon-green.png"] forState:UIControlStateNormal];
+           // other statements
+           self.retweetCount.text = [NSString stringWithFormat:@"%i", self.tweet.retweetCount];
+       }
+    [self refreshData];
 }
 
 - (void) refreshData {
