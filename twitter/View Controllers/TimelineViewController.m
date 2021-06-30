@@ -93,6 +93,9 @@
     cell.tweetProfile.layer.cornerRadius =  cell.tweetProfile.frame.size.width / 2;
     cell.tweetProfile.clipsToBounds = true;
     
+    cell.tweetCircle.layer.cornerRadius =  cell.tweetCircle.frame.size.width / 2;
+    cell.tweetCircle.clipsToBounds = true;
+    
     //update UI
     UIButton *btnRetweet = (UIButton *)cell.retweetIcon;
     UIButton *btnLike = (UIButton *)cell.likeIcon;
