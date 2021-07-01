@@ -18,7 +18,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 
@@ -49,22 +48,18 @@
         }];
     }
     UIButton *btn = (UIButton *)sender;
-
      if( [[btn imageForState:UIControlStateNormal] isEqual:[UIImage imageNamed:@"favor-icon-red.png"]])
         {
            [btn setImage:[UIImage imageNamed:@"favor-icon.png"] forState:UIControlStateNormal];
-           // other statements
             self.likeCount.text = [NSString stringWithFormat:@"%i", self.tweet.favoriteCount];
             self.likeCount.textColor =[UIColor grayColor];
         }
      else
        {
            [btn setImage:[UIImage imageNamed:@"favor-icon-red.png"] forState:UIControlStateNormal];
-           // other statements
            self.likeCount.text = [NSString stringWithFormat:@"%i", self.tweet.favoriteCount];
            self.likeCount.textColor =[UIColor redColor];
        }
-    [self refreshData];
 }
 - (IBAction)didTapRetweet:(id)sender {
     if(self.tweet.retweeted == YES){
@@ -97,22 +92,15 @@
      if( [[btn imageForState:UIControlStateNormal] isEqual:[UIImage imageNamed:@"retweet-icon-green.png"]])
         {
            [btn setImage:[UIImage imageNamed:@"retweet-icon.png"] forState:UIControlStateNormal];
-           // other statements
             self.retweetCount.text = [NSString stringWithFormat:@"%i", self.tweet.retweetCount];
-            self.likeCount.textColor =[UIColor grayColor];
+            self.retweetCount.textColor =[UIColor grayColor];
         }
      else
        {
            [btn setImage:[UIImage imageNamed:@"retweet-icon-green.png"] forState:UIControlStateNormal];
-           // other statements
            self.retweetCount.text = [NSString stringWithFormat:@"%i", self.tweet.retweetCount];
-           self.likeCount.textColor =[UIColor greenColor];
+           self.retweetCount.textColor =[UIColor greenColor];
        }
-    [self refreshData];
-}
-
-- (void) refreshData {
-    //code
 }
 
 @end

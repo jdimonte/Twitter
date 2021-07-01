@@ -78,7 +78,8 @@
     cell.tweet = tweet;
     
     cell.tweetName.text = user.name;
-    cell.tweetUsername.text = user.screenName;
+    NSString *fullUsername = [@"@" stringByAppendingString:user.screenName];
+    cell.tweetUsername.text = fullUsername;
     cell.tweetText.text = tweet.text;
     cell.likeCount.text = [NSString stringWithFormat:@"%i", tweet.favoriteCount];
     cell.retweetCount.text = [NSString stringWithFormat:@"%i", tweet.retweetCount];
@@ -112,7 +113,7 @@
     
     NSString *URLString = tweet.user.profilePicture;
     NSURL *url = [NSURL URLWithString:URLString];
-    NSData *urlData = [NSData dataWithContentsOfURL:url];
+    //NSData *urlData = [NSData dataWithContentsOfURL:url];
     [cell.tweetProfile setImageWithURL:url];
     
     return cell;
@@ -136,7 +137,7 @@
         ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
         composeController.delegate = self;
     }
-    else {
+    else { //goes to details view controller
         NSLog(@"%@", self.arrayOfTweets);
         UITableViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
