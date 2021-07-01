@@ -53,9 +53,9 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src="https://github.com/jdimonte/Flix/blob/main/logintweet.gif" width="250">
-<img src="https://github.com/jdimonte/Flix/blob/main/refreshlikeretweet.gif" width="250">
-<img src="https://github.com/jdimonte/Flix/blob/main/autolayoutlogout.gif" width="500">
+<img src="https://github.com/jdimonte/Twitter/blob/main/logintweet.gif" width="250">
+<img src="https://github.com/jdimonte/Twitter/blob/main/refreshlikeretweet.gif" width="250">
+<img src="https://github.com/jdimonte/Twitter/blob/main/autolayoutlogout.gif" width="500">
 
 First GIF shows the home screen icon and the launch screen, how the user can login, and compose a new tweet by tapping on the button. 
 Second GIF shows the refresh function, and how the user can favorite, unfavorite, tweet, and retweet on the table view that shows their 20 recent tweets, and in the details page.
