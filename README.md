@@ -2,7 +2,7 @@
 
 Twitter is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
 
-Time spent: 18 hours spent in total
+Time spent: 19 hours spent in total
 
 ## User Stories
 
@@ -46,8 +46,8 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. I want to talk about how I can organize the code better with models, so I do not repeat similar code.
+2. I would like to talk about implementing the optionals, because I am very interested in how the commenting functionality works.
 
 ## Video Walkthrough
 
@@ -65,7 +65,7 @@ GIF created with [Kap](https://getkap.co/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+The hardest part about implementing Twitter was not having confidence in where I put code, not knowing if it was the "right" place until I go through the debugging process. However, it was very interesting working with the API, and it was very satisfying when the code works.
 
 ## Credits
 
