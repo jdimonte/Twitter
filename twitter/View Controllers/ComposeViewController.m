@@ -18,7 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
 }
 - (IBAction)closeTapped:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:true completion:nil];
